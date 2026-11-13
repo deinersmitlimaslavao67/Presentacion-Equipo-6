@@ -301,14 +301,433 @@
     @media (max-width: 520px) {
       .marca { display: none; }
       .nav-inner { justify-content: center; }
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Equipo 6 | Presentación de Desarrollo de Software</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* =========================================
+       1. PALETA DE COLORES Y ESTILOS BASE
+       ========================================= */
+    :root {
+      /* Colores principales */
+      --color-primario: #0F172A;      /* Azul pizarra oscuro */
+      --color-secundario: #2563EB;    /* Azul vibrante */
+      --color-acento: #06B6D4;        /* Cian brillante */
+      
+      /* Fondos y superficies */
+      --bg-principal: #F8FAFC;        /* Fondo claro general */
+      --bg-tarjeta: #FFFFFF;          /* Blanco puro para tarjetas */
+      
+      /* Tipografía */
+      --texto-principal: #1E293B;     /* Texto oscuro legible */
+      --texto-secundario: #64748B;    /* Subtítulos y descripciones */
+      --texto-claro: #F8FAFC;         /* Texto sobre fondos oscuros */
+      
+      /* Bordes y sombras */
+      --borde-suave: #E2E8F0;
+      --sombra-tarjeta: 0 10px 25px -5px rgba(15, 23, 42, 0.08);
+      --radio-borde: 12px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg-principal);
+      color: var(--texto-principal);
+      line-height: 1.6;
+    }
+
+    .contenedor {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* =========================================
+       2. BLOQUE DE INTRODUCCIÓN (HERO)
+       ========================================= */
+    .hero-intro {
+      background: linear-gradient(135deg, var(--color-primario) 0%, #1E293B 100%);
+      color: var(--texto-claro);
+      padding: 90px 0;
+      text-align: center;
+    }
+
+    .hero-etiqueta {
+      display: inline-block;
+      background-color: rgba(6, 182, 212, 0.15);
+      color: var(--color-acento);
+      border: 1px solid rgba(6, 182, 212, 0.3);
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .hero-intro h1 {
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 700;
+      line-height: 1.2;
+      max-width: 800px;
+      margin: 0 auto 20px;
+    }
+
+    .hero-intro h1 span {
+      background: linear-gradient(90deg, var(--color-acento), #60A5FA);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-intro p {
+      font-size: 1.15rem;
+      color: #CBD5E1;
+      max-width: 650px;
+      margin: 0 auto 36px;
+      font-weight: 300;
+    }
+
+    .botones-hero {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-principal {
+      display: inline-block;
+      background-color: var(--color-secundario);
+      color: var(--texto-claro);
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn-principal:hover {
+      background-color: #1D4ED8;
+      transform: translateY(-2px);
+    }
+
+    .btn-secundario {
+      display: inline-block;
+      background-color: transparent;
+      color: var(--texto-claro);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-secundario:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    /* =========================================
+       3. ENCABEZADOS DE SECCIÓN
+       ========================================= */
+    .seccion {
+      padding: 80px 0;
+    }
+
+    .encabezado-seccion {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 50px;
+    }
+
+    .encabezado-seccion h2 {
+      font-size: 2.1rem;
+      color: var(--color-primario);
+      margin-bottom: 14px;
+    }
+
+    .encabezado-seccion h2::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--color-secundario), var(--color-acento));
+      margin: 10px auto 0;
+      border-radius: 2px;
+    }
+
+    .encabezado-seccion p {
+      color: var(--texto-secundario);
+      font-size: 1.05rem;
+    }
+
+    /* =========================================
+       4. SECCIÓN ¿QUIÉNES SOMOS? (RESUMEN EQUIPO)
+       ========================================= */
+    .grid-equipo {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px;
+    }
+
+    .tarjeta-resumen {
+      background-color: var(--bg-tarjeta);
+      border: 1px solid var(--borde-suave);
+      border-radius: var(--radio-borde);
+      padding: 28px 20px;
+      text-align: center;
+      box-shadow: var(--sombra-tarjeta);
+      flex: 1 1 280px;
+      max-width: 330px;
+      transition: transform 0.3s ease;
+    }
+
+    .tarjeta-resumen:hover {
+      transform: translateY(-5px);
+    }
+
+    .avatar-iniciales {
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      margin: 0 auto 16px;
+      background: linear-gradient(135deg, var(--color-secundario), var(--color-acento));
+      color: var(--texto-claro);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .tarjeta-resumen h3 {
+      font-size: 1.15rem;
+      color: var(--color-primario);
+      margin-bottom: 4px;
+    }
+
+    .rol-equipo {
+      display: block;
+      color: var(--color-secundario);
+      font-size: 0.88rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .tarjeta-resumen p {
+      color: var(--texto-secundario);
+      font-size: 0.92rem;
+    }
+
+    /* =========================================
+       5. APARTADOS INDIVIDUALES DE INTEGRANTES
+       ========================================= */
+    .contenedor-perfiles {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .tarjeta-integrante {
+      background-color: var(--bg-tarjeta);
+      border-radius: var(--radio-borde);
+      padding: 32px;
+      box-shadow: var(--sombra-tarjeta);
+      border: 1px solid var(--borde-suave);
+      border-left: 6px solid var(--color-secundario);
+      display: flex;
+      gap: 28px;
+      align-items: flex-start;
+    }
+
+    .foto-perfil {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #DBEAFE;
+      flex-shrink: 0;
+    }
+
+    .info-integrante h3 {
+      color: var(--color-primario);
+      font-size: 1.5rem;
+      margin-bottom: 6px;
+    }
+
+    .badge-rol {
+      display: inline-block;
+      background-color: #DBEAFE;
+      color: #1D4ED8;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+    }
+
+    .descripcion-personal {
+      color: var(--texto-principal);
+      margin-bottom: 18px;
+    }
+
+    .titulo-destacados {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-primario);
+      margin-bottom: 10px;
+    }
+
+    .lista-destacados {
+      padding-left: 20px;
+      color: var(--texto-secundario);
+    }
+
+    .lista-destacados li {
+      margin-bottom: 6px;
+    }
+
+    .lista-destacados strong {
+      color: var(--texto-principal);
+    }
+
+    @media (max-width: 650px) {
+      .tarjeta-integrante {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .lista-destacados {
+        text-align: left;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- SECCIÓN INTEGRANTE 1 -->
+  <!-- =========================================
+       BLOQUE DE INTRODUCCIÓN
+       ========================================= -->
+  <header class="hero-intro">
+    <div class="contenedor">
+      <span class="hero-etiqueta">Equipo 6 • Análisis y Desarrollo de Software</span>
+      <h1>Transformando ideas en <span>soluciones digitales</span> eficientes</h1>
+      <p>
+        Bienvenido a la presentación oficial de nuestro equipo de trabajo. Combinamos lógica, diseño y arquitectura de software para construir aplicaciones modernas, seguras y escalables.
+      </p>
+      <div class="botones-hero">
+        <a href="#quienes-somos" class="btn-principal">¿Quiénes somos?</a>
+        <a href="#perfiles" class="btn-secundario">Perfiles Individuales</a>
+      </div>
+    </div>
+  </header>
 
-  <!-- SECCIÓN INTEGRANTE 2 -->
+  <main>
+    <!-- =========================================
+         SECCIÓN ¿QUIÉNES SOMOS?
+         ========================================= -->
+    <section id="quienes-somos" class="seccion">
+      <div class="contenedor">
+        <div class="encabezado-seccion">
+          <h2>¿Quiénes somos?</h2>
+          <p>
+            Somos un equipo de desarrolladores Full Stack comprometidos con la excelencia técnica, el aprendizaje continuo y la construcción colaborativa de software de alto impacto.
+          </p>
+        </div>
+
+        <div class="grid-equipo">
+          <article class="tarjeta-resumen">
+            <div class="avatar-iniciales">DF</div>
+            <h3>Danna Farfán</h3>
+            <span class="rol-equipo">Desarrolladora Full Stack</span>
+            <p>Enfocada en diseño UI/UX, interfaces responsivas, modelado UML y bases de datos relacionales.</p>
+          </article>
+
+          <article class="tarjeta-resumen">
+            <div class="avatar-iniciales">DL</div>
+            <h3>Deiner Smit Limas</h3>
+            <span class="rol-equipo">Desarrollador Full Stack</span>
+            <p>Especializado en arquitectura del servidor, lógica de negocio e integración de servicios.</p>
+          </article>
+
+          <article class="tarjeta-resumen">
+            <div class="avatar-iniciales">JS</div>
+            <h3>Juan Manuel Silva</h3>
+            <span class="rol-equipo">Desarrollador Full Stack</span>
+            <p>Enfocado en desarrollo de APIs, estructura de datos y optimización del rendimiento.</p>
+          </article>
+
+          <article class="tarjeta-resumen">
+            <div class="avatar-iniciales">KC</div>
+            <h3>Kevin Camilo Caballero</h3>
+            <span class="rol-equipo">Desarrollador Full Stack</span>
+            <p>Dedicado a funcionalidades interactivas, seguridad de la información y despliegue continuo.</p>
+          </article>
+
+          <article class="tarjeta-resumen">
+            <div class="avatar-iniciales">CA</div>
+            <h3>Cristian Camilo Alegria</h3>
+            <span class="rol-equipo">Desarrollador Full Stack</span>
+            <p>Encargado de integración de módulos, control de calidad (QA) y mantenimiento de código.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================
+         APARTADOS INDIVIDUALES DEL EQUIPO
+         ========================================= -->
+    <section id="perfiles" class="seccion" style="padding-top: 20px;">
+      <div class="contenedor">
+        <div class="encabezado-seccion">
+          <h2>Perfiles Individuales</h2>
+          <p>Conoce más a fondo la trayectoria, habilidades y fortalezas de cada integrante durante la formación.</p>
+        </div>
+
+        <div class="contenedor-perfiles">
+
+          <!-- SECCIÓN INTEGRANTE 1 (DANNA) -->
+          <article class="tarjeta-integrante" id="integrante-1">
+            <!-- Asegúrate de tener tu foto en la carpeta img/danna.jpg o ajusta la ruta -->
+            <img src="Img\WhatsApp Image 2026-11-13 at 9.32.22 AM.jpeg" alt="Fotografía de Danna Farfán" class="foto-perfil">
+            
+            <div class="info-integrante">
+              <h3>Danna Michelle Farfán Ramírez</h3>
+              <span class="badge-rol">Desarrolladora Full Stack • Aprendiz ADSO</span>
+              
+              <p class="descripcion-personal">
+                Soy aprendiz de Análisis y Desarrollo de Software apasionada por crear herramientas digitales claras, funcionales y bien estructuradas. Me destaco por mi responsabilidad, organización, atención al detalle y facilidad para articular el diseño visual con la lógica de datos.
+              </p>
+
+              <div class="titulo-destacados">Aspectos más destacados durante la formación:</div>
+              <ul class="lista-destacados">
+                <li><strong>Bases de Datos Relacionales:</strong> Diseño de modelos entidad-relación, normalización y administración en MySQL y phpMyAdmin.</li>
+                <li><strong>Análisis y Modelado UML:</strong> Levantamiento de requerimientos y elaboración de diagramas de casos de uso y flujos de sistema.</li>
+                <li><strong>Diseño de Interfaces y Prototipado:</strong> Creación de wireframes interactivos en Figma y maquetación web responsiva con HTML5 y CSS3.</li>
+                <li><strong>Lógica y Algoritmia:</strong> Resolución estructurada de problemas de programación y trabajo colaborativo con control de versiones.</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- SECCIÓN INTEGRANTE 2 -->
+
+          <!-- SECCIÓN INTEGRANTE 3 -->
+
+          <!-- SECCIÓN INTEGRANTE 4 -->
 
 <!-- NAVEGACIÓN -->
   <nav class="nav">
@@ -446,8 +865,32 @@
   </footer>
   
   <!-- SECCIÓN INTEGRANTE 3 -->
+          <!-- SECCIÓN INTEGRANTE 5 -->
+          <article class="tarjeta-integrante" id="integrante-1">
+            <!-- Asegúrate de tener tu foto en la carpeta img/danna.jpg o ajusta la ruta -->
+            <img src="Img\WhatsApp Image 2026-11-13 at 9.322 AM.jpeg" alt="Fotografía de Danna Farfán" class="foto-perfil">
+            
+            <div class="info-integrante">
+              <h3>Cristian Camilo Algeria Rivera</h3>
+              <span class="badge-rol">Desarrolladora Full Stack • Aprendiz ADSO</span>
+              
+              <p class="descripcion-personal">
+                Estudiante de Análisis y Desarrollo de Software enfocado en el desarrollo web integral y la resolución eficiente de problemas. Me destaco por mi disciplina, capacidad de adaptación y entusiasmo por transformar requerimientos en aplicaciones intuitivas y seguras.
+              </p>
 
-  <!-- SECCIÓN INTEGRANTE 4 -->
+              <div class="titulo-destacados">Aspectos más destacados durante la formación:</div>
+              <ul class="lista-destacados">
+                <li><strong>Bases de Datos Relacionales:</strong> Diseño de modelos entidad-relación, normalización y administración en MySQL y phpMyAdmin.</li>
+                <li><strong>Análisis y Modelado UML:</strong> Levantamiento de requerimientos y elaboración de diagramas de casos de uso y flujos de sistema.</li>
+                <li><strong>Diseño de Interfaces y Prototipado:</strong> Creación de wireframes interactivos en Figma y maquetación web responsiva con HTML5 y CSS3.</li>
+                <li><strong>Lógica y Algoritmia:</strong> Resolución estructurada de problemas de programación y trabajo colaborativo con control de versiones.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
 
 </body>
 </html>
