@@ -92,7 +92,7 @@
       gap: 1.1rem;
     }
 
-    .tarjeta {
+    .integrante-4 .tarjeta {
       margin: 0;
       padding: 1.25rem;
       border: 1px solid var(--borde);
@@ -103,18 +103,18 @@
       transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
     }
 
-    article.tarjeta:hover {
+    .integrante-4 article.tarjeta:hover {
       transform: translateY(-4px);
       border-color: #d6afb3;
       box-shadow: 0 12px 26px rgb(112 43 53 / 10%);
     }
 
-    .tarjeta h4 {
+    .integrante-4 .tarjeta h4 {
       margin: 0 0 0.5rem;
       font-size: 1.05rem;
     }
 
-    .tarjeta p {
+    .integrante-4 .tarjeta p {
       margin: 0;
       color: var(--texto-suave);
     }
@@ -152,7 +152,7 @@
       background: linear-gradient(120deg, #f8eded, #fffafa 75%);
     }
 
-    .foto-perfil {
+    .integrante-4 .foto-perfil {
       flex: 0 0 150px;
       width: 150px;
       height: 150px;
@@ -249,7 +249,7 @@
         align-items: flex-start;
       }
 
-      .foto-perfil {
+      .integrante-4 .foto-perfil {
         width: 120px;
         height: 120px;
         flex-basis: 120px;
@@ -262,11 +262,11 @@
         animation: none;
       }
 
-      article.tarjeta {
+      .integrante-4 article.tarjeta {
         transition: none;
       }
 
-      article.tarjeta:hover {
+      .integrante-4 article.tarjeta:hover {
         transform: none;
       }
 
@@ -276,7 +276,11 @@
 
       .lenguaje:hover {
         transform: none;
-  <!-- Estilos exclusivos de la sección del integrante 3 (Kevin). -->
+      }
+    }
+  </style>
+
+  
   <style>
     #integrante-3, #integrante-3 * { box-sizing: border-box; }
     #integrante-3 { margin: 0; background: #f4f6f8; color: #152c3a; font-family: Arial, Helvetica, sans-serif; line-height: 1.65; }
@@ -324,8 +328,9 @@
     #integrante-3 .kv-nav, #integrante-3 .kv-footer { flex-wrap: wrap; }
     #integrante-3 .kv-nav a { margin: 0 15px 0 0; }
     #integrante-3 .kv-step { padding: 20px; } }
+  </style>
   <style>
-    /* ===== PALETA DE COLORES ===== */
+  
     :root {
       --primario: #14275e;          
       --primario-oscuro: #0c1a40;
@@ -351,7 +356,7 @@
       -webkit-font-smoothing: antialiased;
     }
  
-    /* ===== NAVEGACIÓN ===== */
+   
     .nav {
       position: sticky;
       top: 0;
@@ -388,7 +393,7 @@
     }
     .nav ul a:hover { color: #fff; border-color: var(--acento); }
  
-    /* ===== PORTADA ===== */
+    
     .hero {
       position: relative;
       overflow: hidden;
@@ -400,7 +405,7 @@
         radial-gradient(circle at 85% 80%, rgba(245, 158, 11, .25), transparent 40%),
         linear-gradient(135deg, var(--primario-oscuro), var(--primario));
     }
-    .hero::after {            /* borde inferior */
+    .hero::after {            
       content: "";
       position: absolute;
       left: 0; right: 0; bottom: -1px;
@@ -433,9 +438,9 @@
       font-size: 1.1rem;
     }
  
-    /* ===== SECCIONES ===== */
+  
     main { max-width: 1080px; margin: 0 auto; padding: 0 1.5rem; }
-    section { padding: 3.5rem 0 1rem; }
+    main > section { padding: 3.5rem 0 1rem; }
  
     .encabezado { margin-bottom: 2rem; }
     .encabezado .sobretitulo {
@@ -464,13 +469,12 @@
     }
     .encabezado p { color: var(--texto-suave); max-width: 640px; margin-top: 1rem; }
  
-    /* ===== REJILLA DE TARJETAS ===== */
     .rejilla {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
       gap: 1.25rem;
     }
-    .tarjeta {
+    main .tarjeta {
       position: relative;
       background: var(--tarjeta);
       border: 1px solid var(--borde);
@@ -480,14 +484,14 @@
       transition: transform .25s, box-shadow .25s;
       overflow: hidden;
     }
-    .tarjeta::before {
+    main .tarjeta::before {
       content: "";
       position: absolute;
       top: 0; left: 0; right: 0;
       height: 4px;
       background: linear-gradient(90deg, var(--secundario), var(--acento));
     }
-    .tarjeta:hover { transform: translateY(-5px); box-shadow: var(--sombra-hover); }
+    main .tarjeta:hover { transform: translateY(-5px); box-shadow: var(--sombra-hover); }
  
     .icono {
       width: 48px; height: 48px;
@@ -511,8 +515,8 @@
       margin-bottom: 1rem;
       box-shadow: 0 0 0 5px rgba(245, 158, 11, .2);
     }
-    .tarjeta h3 { color: var(--primario); font-size: 1.1rem; margin-bottom: .4rem; }
-    .tarjeta p { color: var(--texto-suave); font-size: .96rem; }
+    main .tarjeta h3 { color: var(--primario); font-size: 1.1rem; margin-bottom: .4rem; }
+    main .tarjeta p { color: var(--texto-suave); font-size: .96rem; }
  
     .intro-bloque {
       background: linear-gradient(135deg, var(--primario), var(--primario-oscuro));
@@ -598,8 +602,7 @@
       font-weight: 800;
     }
  
-    /* ===== PIE DE PÁGINA ===== */
-    footer {
+    body > footer {
       margin-top: 5rem;
       background: var(--primario-oscuro);
       color: #9fb0d6;
@@ -608,9 +611,8 @@
       font-size: .9rem;
       border-top: 4px solid var(--acento);
     }
-    footer strong { color: #fff; }
+    body > footer strong { color: #fff; }
  
-    /* ===== RESPONSIVE ===== */
     @media (max-width: 780px) {
       .nav ul { gap: 1rem; }
       .nav ul a { font-size: .84rem; }
@@ -622,28 +624,25 @@
     @media (max-width: 520px) {
       .marca { display: none; }
       .nav-inner { justify-content: center; }
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Equipo 6 | Presentación de Desarrollo de Software</title>
+    }
+  </style>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  
   <style>
-    /* =========================================
-       1. PALETA DE COLORES Y ESTILOS BASE
-       ========================================= */
+
     :root {
-      /* Colores principales */
-      --color-primario: #0F172A;      /* Azul pizarra oscuro */
-      --color-secundario: #2563EB;    /* Azul vibrante */
-      --color-acento: #06B6D4;        /* Cian brillante */
       
-      /* Fondos y superficies */
-      --bg-principal: #F8FAFC;        /* Fondo claro general */
-      --bg-tarjeta: #FFFFFF;          /* Blanco puro para tarjetas */
+      --color-primario: #0F172A;     
+      --color-secundario: #2563EB;   
+      --color-acento: #06B6D4;        
+      
+      
+      --bg-principal: #F8FAFC;        
+      --bg-tarjeta: #FFFFFF;          
       
       /* Tipografía */
-      --texto-principal: #1E293B;     /* Texto oscuro legible */
-      --texto-secundario: #64748B;    /* Subtítulos y descripciones */
-      --texto-claro: #F8FAFC;         /* Texto sobre fondos oscuros */
+      --texto-principal: #1E293B;     
+      --texto-secundario: #64748B;    
+      --texto-claro: #F8FAFC;         
       
       /* Bordes y sombras */
       --borde-suave: #E2E8F0;
@@ -674,9 +673,7 @@
       padding: 0 24px;
     }
 
-    /* =========================================
-       2. BLOQUE DE INTRODUCCIÓN (HERO)
-       ========================================= */
+  
     .hero-intro {
       background: linear-gradient(135deg, var(--color-primario) 0%, #1E293B 100%);
       color: var(--texto-claro);
@@ -760,9 +757,7 @@
       background-color: rgba(255, 255, 255, 0.1);
     }
 
-    /* =========================================
-       3. ENCABEZADOS DE SECCIÓN
-       ========================================= */
+   
     .seccion {
       padding: 80px 0;
     }
@@ -794,9 +789,7 @@
       font-size: 1.05rem;
     }
 
-    /* =========================================
-       4. SECCIÓN ¿QUIÉNES SOMOS? (RESUMEN EQUIPO)
-       ========================================= */
+
     .grid-equipo {
       display: flex;
       flex-wrap: wrap;
@@ -853,9 +846,7 @@
       font-size: 0.92rem;
     }
 
-    /* =========================================
-       5. APARTADOS INDIVIDUALES DE INTEGRANTES
-       ========================================= */
+  
     .contenedor-perfiles {
       display: flex;
       flex-direction: column;
@@ -874,7 +865,7 @@
       align-items: flex-start;
     }
 
-    .foto-perfil {
+    .tarjeta-integrante .foto-perfil {
       width: 150px;
       height: 150px;
       border-radius: 50%;
@@ -940,9 +931,6 @@
 </head>
 <body>
 
-  <!-- =========================================
-       BLOQUE DE INTRODUCCIÓN
-       ========================================= -->
   <header class="hero-intro">
     <div class="contenedor">
       <span class="hero-etiqueta">Equipo 6 • Análisis y Desarrollo de Software</span>
@@ -958,9 +946,6 @@
   </header>
 
   <main>
-    <!-- =========================================
-         SECCIÓN ¿QUIÉNES SOMOS?
-         ========================================= -->
     <section id="quienes-somos" class="seccion">
       <div class="contenedor">
         <div class="encabezado-seccion">
@@ -1009,9 +994,7 @@
       </div>
     </section>
 
-    <!-- =========================================
-         APARTADOS INDIVIDUALES DEL EQUIPO
-         ========================================= -->
+
     <section id="perfiles" class="seccion" style="padding-top: 20px;">
       <div class="contenedor">
         <div class="encabezado-seccion">
@@ -1021,7 +1004,7 @@
 
         <div class="contenedor-perfiles">
 
-          <!-- SECCIÓN INTEGRANTE 1 (DANNA) -->
+
           <article class="tarjeta-integrante" id="integrante-1">
             <!-- Asegúrate de tener tu foto en la carpeta img/danna.jpg o ajusta la ruta -->
             <img src="Img\WhatsApp Image 2026-11-13 at 9.32.22 AM.jpeg" alt="Fotografía de Danna Farfán" class="foto-perfil">
@@ -1045,7 +1028,7 @@
           </article>
 
 
-<!-- NAVEGACIÓN -->
+
   <nav class="nav">
     <div class="nav-inner">
       <a class="marca" href="#inicio">EQUIPO <span>6</span></a>
@@ -1066,7 +1049,7 @@
  
   <main>
  
-    <!-- SECCIÓN VISIÓN: ¿QUÉ QUEREMOS? -->
+   
     <section id="queremos">
       <div class="encabezado">
         <span class="sobretitulo">Nuestra visión</span>
@@ -1101,7 +1084,7 @@
       </div>
     </section>
  
-    <!-- SECCIÓN PROPÓSITO: ¿QUÉ VAMOS A HACER? -->
+    
     <section id="vamos-a-hacer">
       <div class="encabezado">
         <span class="sobretitulo">Nuestro propósito</span>
@@ -1137,22 +1120,17 @@
       </div>
     </section>
  
-    <!-- INTEGRANTES -->
     <section id="integrantes">
       <div class="encabezado">
         <span class="sobretitulo">Conoce al equipo</span>
         <h2>Apartado individual</h2>
       </div>
  
-      <!-- FOTO INTEGRANTE 2 -->
+     
       <article class="integrante" id="juan">
         <div class="integrante-lateral">
-          <!--
-            AQUÍ VA LA FOTO DE JUAN:
-            reemplaza el valor de src por la ruta de la imagen (por ejemplo "img/juan.jpg")
-            o por el enlace de la imagen, y ajusta el texto de alt.
-          -->
-          <img class="foto" src="yo.jpeg" alt="Fotografía de Juan">
+         
+          <img class="foto" src="img/yo.jpeg" alt="Fotografía de Juan">
           <h3>Juan</h3>
           <span class="rol">Integrante · Equipo 6</span>
         </div>
@@ -1180,7 +1158,7 @@
     <strong>Equipo 6</strong> · Proyecto de formación · 2026
   </footer>
   
-  <!-- SECCIÓN INTEGRANTE 3 -->
+
   <section id="integrante-3" aria-labelledby="kv-titulo">
   <div class="kv-wrap">
     <header class="kv-nav">
@@ -1193,7 +1171,7 @@
         <h2 class="kv-hero-title" id="kv-titulo">Cada paso nos acerca<br>a lo que queremos crear.</h2>
         <p class="kv-lead">Nuestra formación en análisis y desarrollo de software: una ruta para convertir ideas en soluciones y crecer juntos como equipo.</p>
       </div>
-      <!-- INICIO: sección asignada a Kevin. Ajustar las etapas al recorrido real del equipo. -->
+      
       <section class="kv-section" id="ruta-aprendizaje" aria-labelledby="kv-ruta-titulo">
         <div class="kv-heading"><span class="kv-index">01 /</span><h2 id="kv-ruta-titulo">Ruta de aprendizaje que llevamos</h2></div>
         <ol class="kv-timeline">
@@ -1205,15 +1183,14 @@
           <li class="kv-step kv-next"><h3>06. Próximos pasos</h3><p>Queremos integrar lo aprendido en proyectos más completos, reforzar las pruebas, mejorar la seguridad y documentar nuestras soluciones.</p><div class="kv-tags"><span>Objetivo futuro</span><span>Pruebas</span><span>Seguridad</span><span>Proyectos integradores</span></div></li>
         </ol>
       </section>
-      <!-- FIN: ruta de aprendizaje. -->
-      <!-- INICIO: apartado personal de Kevin. La descripción es editable. -->
+      
       <section class="kv-section" id="kevin" aria-labelledby="kv-personal-titulo">
         <div class="kv-heading"><span class="kv-index">02 /</span><h2 id="kv-personal-titulo">Una persona detrás de cada aporte</h2></div>
         <article class="kv-profile">
           <div>
             <div class="kv-photo">
               
-              <img id="kv-foto" src="kevin_y_goku.png" alt="Fotografía de Kevin Camilo">
+              <img id="kv-foto" src="img/kevin_y_goku.png" alt="Fotografía de Kevin Camilo">
             </div>
           </div>
           <div>
@@ -1232,12 +1209,11 @@
           </div>
         </article>
       </section>
-      <!-- FIN: apartado personal. -->
+    
     </div>
     <footer class="kv-footer"><span>Equipo ADSO · Nuestra ruta de aprendizaje</span><span>Seguimos aprendiendo, seguimos construyendo.</span></footer>
   </div>
   </section>
-  <!-- FIN SECCIÓN INTEGRANTE 3 -->
 
   <section class="integrante-4" aria-labelledby="titulo-integrante-4">
     <header>
@@ -1293,7 +1269,7 @@
     <section aria-labelledby="titulo-perfil-limas">
       <h3 id="titulo-perfil-limas">Perfil individual</h3>
       <div class="perfil-limas">
-        <img class="foto-perfil" src="limasimg/Limas.jpeg" alt="Fotografía de Limas">
+        <img class="foto-perfil" src="img/Limas.jpeg" alt="Fotografía de Limas">
         <div class="datos-perfil">
           <h4>Deiner Smit Limas Lavao</h4>
           <p>
@@ -1343,8 +1319,7 @@
       </div>
     </section>
   </section>
-  <!-- SECCIÓN INTEGRANTE 4 -->
-          <!-- SECCIÓN INTEGRANTE 5 -->
+  
           <article class="tarjeta-integrante" id="integrante-1">
             <!-- Asegúrate de tener tu foto en la carpeta img/danna.jpg o ajusta la ruta -->
             <img src="Img\WhatsApp Image 2026-11-13 at 9.322 AM.jpeg" alt="Fotografía de Danna Farfán" class="foto-perfil">
