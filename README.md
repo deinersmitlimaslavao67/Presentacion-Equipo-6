@@ -1,2 +1,2 @@
-# Presentacion-Equipo-6
+# Sustentación del equipo
 Quienes somos, que queremos, y que vamos a hacer.
