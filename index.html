@@ -2,18 +2,123 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Equipo 6</title>
+  <!-- Estilos exclusivos de la sección del integrante 3 (Kevin). -->
+  <style>
+    #integrante-3, #integrante-3 * { box-sizing: border-box; }
+    #integrante-3 { margin: 0; background: #f4f6f8; color: #152c3a; font-family: Arial, Helvetica, sans-serif; line-height: 1.65; }
+    #integrante-3 .kv-wrap { width: min(1100px, 90%); margin: auto; }
+    #integrante-3 .kv-nav { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 22px 0; border-bottom: 1px solid #d5dfe5; }
+    #integrante-3 .kv-brand { font-size: 18px; font-weight: 800; letter-spacing: 1px; }
+    #integrante-3 .kv-nav a { color: #873039; font-size: 14px; text-decoration: none; margin-left: 18px; }
+    #integrante-3 .kv-nav a:hover { text-decoration: underline; }
+    #integrante-3 .kv-hero { padding: 65px 0 45px; max-width: 800px; }
+    #integrante-3 .kv-eyebrow { color: #a52b32; text-transform: uppercase; letter-spacing: 2px; font-size: 12px; font-weight: 800; }
+    #integrante-3 .kv-hero-title { font-size: clamp(32px, 5vw, 54px); line-height: 1.12; margin: 16px 0 22px; letter-spacing: -2px; }
+    #integrante-3 .kv-lead { color: #526571; font-size: 18px; max-width: 680px; }
+    #integrante-3 .kv-section { padding: 12px 0 46px; scroll-margin-top: 24px; }
+    #integrante-3 .kv-heading { display: flex; align-items: baseline; gap: 20px; margin-bottom: 26px; }
+    #integrante-3 .kv-heading h2 { font-size: clamp(24px, 3vw, 30px); margin: 0; line-height: 1.25; }
+    #integrante-3 .kv-index { font-family: monospace; color: #a52b32; font-size: 15px; }
+    #integrante-3 .kv-timeline { list-style: none; padding: 0 0 0 30px; margin: 0 0 0 15px; border-left: 2px solid #dfb8bd; display: grid; gap: 18px; }
+    #integrante-3 .kv-step { position: relative; background: white; border: 1px solid #dce4e8; border-radius: 14px; padding: 22px 26px; }
+    #integrante-3 .kv-step::before { content: ''; position: absolute; top: 29px; left: -39px; width: 14px; height: 14px; background: #c43b44; border: 3px solid #f4f6f8; border-radius: 50%; }
+    #integrante-3 .kv-step h3 { margin: 0 0 8px; font-size: 19px; }
+    #integrante-3 .kv-step p { margin: 0 0 15px; color: #526571; }
+    #integrante-3 .kv-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+    #integrante-3 .kv-tags span { background: #fcebed; color: #922630; border-radius: 6px; padding: 4px 10px; font-size: 12px; font-weight: 700; }
+    #integrante-3 .kv-next { background: #fff0f1; border-color: #efb7bd; }
+    #integrante-3 .kv-next::before { background: #c43b44; }
+    #integrante-3 .kv-next .kv-tags span { color: #922630; background: #f8dce0; }
+    #integrante-3 .kv-profile { display: grid; grid-template-columns: 260px 1fr; gap: 38px; background: #fff; border: 1px solid #dce4e8; padding: 34px; border-radius: 18px; }
+    #integrante-3 .kv-photo { aspect-ratio: 1; background: #f4e4e6; border-radius: 12px; overflow: hidden; display: grid; place-items: center; }
+    #integrante-3 .kv-photo img { width: 100%; height: 100%; object-fit: cover; }
+    #integrante-3 .kv-profile h3 { font-size: 30px; line-height: 1.2; margin: 10px 0; }
+    #integrante-3 .kv-role { color: #a52b32; font-weight: 700; font-size: 14px; }
+    #integrante-3 .kv-profile p { color: #526571; }
+    #integrante-3 .kv-profile h4 { margin: 24px 0 10px; }
+    #integrante-3 .kv-strengths { padding-left: 20px; color: #526571; }
+    #integrante-3 .kv-strengths li { margin-bottom: 9px; }
+    #integrante-3 .kv-strengths strong { color: #152c3a; }
+    #integrante-3 .kv-goal { background: #fcf0f1; border-left: 3px solid #c43b44; padding: 14px 18px; }
+    #integrante-3 :focus-visible { outline: 3px solid #a77516; outline-offset: 4px; }
+    #integrante-3 .kv-footer { border-top: 1px solid #d5dfe5; padding: 24px 0; color: #526571; font-size: 13px; display: flex; justify-content: space-between; gap: 16px; }
+    #integrante-3 [hidden] { display: none !important; }
+    @media (max-width: 700px) {
+    #integrante-3 .kv-profile { grid-template-columns: 1fr; padding: 24px; gap: 24px; }
+    #integrante-3 .kv-photo { max-width: 260px; margin: auto; }
+    #integrante-3 .kv-hero { padding-top: 40px; }
+    #integrante-3 .kv-nav, #integrante-3 .kv-footer { flex-wrap: wrap; }
+    #integrante-3 .kv-nav a { margin: 0 15px 0 0; }
+    #integrante-3 .kv-step { padding: 20px; } }
+  </style>
 </head>
 <body>
-  <h1>Página Principal del Equipo</h1>
 
   <!-- SECCIÓN INTEGRANTE 1 -->
 
   <!-- SECCIÓN INTEGRANTE 2 -->
 
   <!-- SECCIÓN INTEGRANTE 3 -->
+  <section id="integrante-3" aria-labelledby="kv-titulo">
+  <div class="kv-wrap">
+    <header class="kv-nav">
+      <span class="kv-brand">EQUIPO ADSO<span style="color:#c43b44"> /</span></span>
+      <nav aria-label="Navegación principal"><a href="#ruta-aprendizaje">Nuestro recorrido</a><a href="#kevin">Conoce a Kevin</a></nav>
+    </header>
+    <div class="kv-contenido">
+      <div class="kv-hero">
+        <span class="kv-eyebrow">Aprender · construir · compartir</span>
+        <h2 class="kv-hero-title" id="kv-titulo">Cada paso nos acerca<br>a lo que queremos crear.</h2>
+        <p class="kv-lead">Nuestra formación en análisis y desarrollo de software: una ruta para convertir ideas en soluciones y crecer juntos como equipo.</p>
+      </div>
+      <!-- INICIO: sección asignada a Kevin. Ajustar las etapas al recorrido real del equipo. -->
+      <section class="kv-section" id="ruta-aprendizaje" aria-labelledby="kv-ruta-titulo">
+        <div class="kv-heading"><span class="kv-index">01 /</span><h2 id="kv-ruta-titulo">Ruta de aprendizaje que llevamos</h2></div>
+        <ol class="kv-timeline">
+          <li class="kv-step"><h3>01. Fundamentos y lógica de programación</h3><p>Aprendemos a analizar problemas y plantear soluciones mediante algoritmos, condiciones, ciclos, arreglos y funciones.</p><div class="kv-tags"><span>PSeInt</span><span>Algoritmos</span><span>Java</span></div></li>
+          <li class="kv-step"><h3>02. Análisis y diseño de software</h3><p>Identificamos necesidades, documentamos requisitos y representamos cómo funcionará una solución antes de desarrollarla.</p><div class="kv-tags"><span>Requisitos</span><span>Historias de usuario</span><span>UML</span><span>Draw.io</span></div></li>
+          <li class="kv-step"><h3>03. Construcción de interfaces web</h3><p>Organizamos el contenido de una página, damos estilo a sus secciones y añadimos interacciones para mejorar la experiencia de las personas.</p><div class="kv-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Visual Studio Code</span></div></li>
+          <li class="kv-step"><h3>04. Bases de datos y programación del servidor</h3><p>Diseñamos modelos entidad-relación, practicamos consultas SQL y estudiamos cómo una aplicación procesa y organiza información.</p><div class="kv-tags"><span>PostgreSQL</span><span>MySQL</span><span>pgAdmin</span><span>PHP</span></div></li>
+          <li class="kv-step"><h3>05. Trabajo colaborativo y control de versiones</h3><p>Distribuimos tareas mediante issues, trabajamos en ramas y proponemos cambios con pull requests para construir un proyecto en equipo.</p><div class="kv-tags"><span>Git</span><span>GitHub</span><span>Issues</span><span>Pull requests</span></div></li>
+          <li class="kv-step kv-next"><h3>06. Próximos pasos</h3><p>Queremos integrar lo aprendido en proyectos más completos, reforzar las pruebas, mejorar la seguridad y documentar nuestras soluciones.</p><div class="kv-tags"><span>Objetivo futuro</span><span>Pruebas</span><span>Seguridad</span><span>Proyectos integradores</span></div></li>
+        </ol>
+      </section>
+      <!-- FIN: ruta de aprendizaje. -->
+      <!-- INICIO: apartado personal de Kevin. La descripción es editable. -->
+      <section class="kv-section" id="kevin" aria-labelledby="kv-personal-titulo">
+        <div class="kv-heading"><span class="kv-index">02 /</span><h2 id="kv-personal-titulo">Una persona detrás de cada aporte</h2></div>
+        <article class="kv-profile">
+          <div>
+            <div class="kv-photo">
+              
+              <img id="kv-foto" src="kevin_y_goku.png" alt="Fotografía de Kevin Camilo">
+            </div>
+          </div>
+          <div>
+            <span class="kv-eyebrow">Integrante del equipo</span>
+            <h3>Kevin Camilo</h3>
+            <div class="kv-role">Aprendiz de Análisis y Desarrollo de Software · SENA</div>
+            <p>Soy Kevin, un aprendiz sena que le gusta aprender y compartir conocimientos con los demas, me gusta mucho la programacion y las bases de datos que con la ayuda de mi instructora karol e podido mejorar y aunque caiga y caiga me levantare las veces que sean necesarias porque mi mejor habilidad es nunca rendirme.</p>
+            <h4>Áreas en las que aporto</h4>
+            <ul class="kv-strengths">
+              <li><strong>Análisis y documentación:</strong> organización de requisitos, historias de usuario y diagramas para explicar los proyectos.</li>
+              <li><strong>Bases de datos:</strong> modelado de información y elaboración de consultas SQL.</li>
+              <li><strong>Lógica de programación:</strong> resolución de ejercicios con estructuras de control, arreglos y funciones.</li>
+              <li><strong>Arquitectura y seguridad:</strong> interés en la organización de los componentes, los roles y el acceso a la información.</li>
+            </ul>
+            <p class="kv-goal"><strong>Mi siguiente meta:</strong> fortalecer mis habilidades de desarrollo y colaboración para aportar a aplicaciones completas, claras y fáciles de utilizar.</p>
+          </div>
+        </article>
+      </section>
+      <!-- FIN: apartado personal. -->
+    </div>
+    <footer class="kv-footer"><span>Equipo ADSO · Nuestra ruta de aprendizaje</span><span>Seguimos aprendiendo, seguimos construyendo.</span></footer>
+  </div>
+  </section>
+  <!-- FIN SECCIÓN INTEGRANTE 3 -->
 
   <!-- SECCIÓN INTEGRANTE 4 -->
-
 </body>
 </html>
