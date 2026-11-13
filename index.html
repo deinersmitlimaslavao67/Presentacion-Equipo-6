@@ -4,6 +4,278 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Equipo 6</title>
+  <style>
+    .integrante-4 {
+      --rojo-oscuro: #702b35;
+      --rojo: #a64f59;
+      --rojo-claro: #f7ebeb;
+      --texto: #352c2d;
+      --texto-suave: #75686a;
+      --borde: #eadbdd;
+      max-width: 1040px;
+      margin: 4rem auto;
+      padding: clamp(1.25rem, 4vw, 3rem);
+      overflow: hidden;
+      border: 1px solid var(--borde);
+      border-radius: 24px;
+      background:
+        radial-gradient(ellipse at 100% 0, #f8eeee 0, transparent 38%),
+        #fffdfd;
+      box-shadow: 0 24px 70px rgb(75 35 40 / 10%);
+      color: var(--texto);
+      font-family: Arial, sans-serif;
+      animation: aparecer 700ms ease-out both;
+    }
+
+    .integrante-4 > header {
+      margin-bottom: 2rem;
+    }
+
+    .etiqueta-integrante {
+      display: inline-block;
+      margin: 0 0 0.8rem;
+      padding: 0.4rem 0.75rem;
+      border: 1px solid #e8cfd2;
+      border-radius: 999px;
+      background: var(--rojo-claro);
+      color: var(--rojo-oscuro);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .integrante-4 h2,
+    .integrante-4 h3,
+    .integrante-4 h4 {
+      color: var(--rojo-oscuro);
+    }
+
+    .integrante-4 h2 {
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      letter-spacing: -0.05em;
+    }
+
+    .integrante-4 h3 {
+      margin: 0 0 1.1rem;
+      font-size: 1.2rem;
+    }
+
+    .introduccion {
+      max-width: 600px;
+      margin: 0.75rem 0 0;
+      color: var(--texto-suave);
+      line-height: 1.7;
+    }
+
+    .integrante-4 > section {
+      margin-top: 1.25rem;
+      padding: clamp(1.1rem, 3vw, 1.75rem);
+      border: 1px solid var(--borde);
+      border-radius: 16px;
+      background: rgb(255 255 255 / 88%);
+      animation: subir 650ms ease-out both;
+    }
+
+    .integrante-4 > section:nth-of-type(2) {
+      animation-delay: 100ms;
+    }
+
+    .integrante-4 > section:nth-of-type(3) {
+      animation-delay: 200ms;
+    }
+
+    .portafolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+      gap: 1.1rem;
+    }
+
+    .tarjeta {
+      margin: 0;
+      padding: 1.25rem;
+      border: 1px solid var(--borde);
+      border-radius: 12px;
+      background: linear-gradient(145deg, #fff 20%, #fcf5f5);
+      color: var(--texto);
+      line-height: 1.7;
+      transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+    }
+
+    article.tarjeta:hover {
+      transform: translateY(-4px);
+      border-color: #d6afb3;
+      box-shadow: 0 12px 26px rgb(112 43 53 / 10%);
+    }
+
+    .tarjeta h4 {
+      margin: 0 0 0.5rem;
+      font-size: 1.05rem;
+    }
+
+    .tarjeta p {
+      margin: 0;
+      color: var(--texto-suave);
+    }
+
+    .lista-logros {
+      display: grid;
+      gap: 0.75rem;
+      padding-left: 1.25rem;
+      list-style: none;
+    }
+
+    .lista-logros li {
+      position: relative;
+      padding-left: 0.6rem;
+    }
+
+    .lista-logros li::before {
+      position: absolute;
+      top: 0.65em;
+      left: -1rem;
+      width: 0.45rem;
+      height: 0.45rem;
+      border-radius: 50%;
+      background: var(--rojo);
+      content: "";
+    }
+
+    .perfil-limas {
+      display: flex;
+      align-items: center;
+      gap: clamp(1.25rem, 4vw, 2.5rem);
+      padding: clamp(1rem, 3vw, 1.75rem);
+      border: 1px solid #eadbdd;
+      border-radius: 16px;
+      background: linear-gradient(120deg, #f8eded, #fffafa 75%);
+    }
+
+    .foto-perfil {
+      flex: 0 0 150px;
+      width: 150px;
+      height: 150px;
+      border: 3px solid #fff;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center;
+      box-shadow: 0 0 0 1px #d9b8bc, 0 8px 20px rgb(112 43 53 / 14%);
+    }
+
+    .datos-perfil h4 {
+      margin: 0 0 0.75rem;
+      font-size: 1.4rem;
+    }
+
+    .datos-perfil p {
+      margin: 0.55rem 0 0;
+      color: var(--texto-suave);
+      line-height: 1.7;
+    }
+
+    .datos-perfil strong {
+      color: var(--texto);
+    }
+
+    .lenguajes-perfil {
+      margin-top: 1.25rem;
+    }
+
+    .lenguajes-perfil h5 {
+      margin: 0 0 0.75rem;
+      color: var(--rojo-oscuro);
+      font-size: 0.9rem;
+    }
+
+    .lista-lenguajes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .lenguaje {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 0.75rem;
+      border: 1px solid var(--borde);
+      border-radius: 999px;
+      background: #fff;
+      color: var(--texto);
+      font-size: 0.85rem;
+      font-weight: 700;
+      transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+
+    .lenguaje:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 12px rgb(112 43 53 / 10%);
+    }
+
+    .icono-lenguaje {
+      display: block;
+      width: 1.35rem;
+      height: 1.35rem;
+      flex: 0 0 auto;
+    }
+
+    .icono-html { color: #e34f26; }
+    .icono-css { color: #1572b6; }
+    .icono-js { color: #d6a800; }
+    .icono-php { color: #777bb4; }
+
+    @keyframes aparecer {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes subir {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 560px) {
+      .integrante-4 {
+        margin: 1.5rem 1rem;
+        border-radius: 18px;
+      }
+
+      .perfil-limas {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .foto-perfil {
+        width: 120px;
+        height: 120px;
+        flex-basis: 120px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .integrante-4,
+      .integrante-4 > section {
+        animation: none;
+      }
+
+      article.tarjeta {
+        transition: none;
+      }
+
+      article.tarjeta:hover {
+        transform: none;
+      }
+
+      .lenguaje {
+        transition: none;
+      }
+
+      .lenguaje:hover {
+        transform: none;
   <!-- Estilos exclusivos de la sección del integrante 3 (Kevin). -->
   <style>
     #integrante-3, #integrante-3 * { box-sizing: border-box; }
@@ -967,6 +1239,110 @@
   </section>
   <!-- FIN SECCIÓN INTEGRANTE 3 -->
 
+  <section class="integrante-4" aria-labelledby="titulo-integrante-4">
+    <header>
+      <p class="etiqueta-integrante">Integrante 04</p>
+      <h2 id="titulo-integrante-4">Limas</h2>
+      <p class="introduccion">
+        Proyectos, logros y aprendizajes de nuestro recorrido en la formación.
+      </p>
+    </header>
+
+    <section aria-labelledby="titulo-proyectos">
+      <h3 id="titulo-proyectos">Proyectos del equipo</h3>
+      <div class="portafolio-grid">
+        <article class="tarjeta">
+          <h4>TechnoStore</h4>
+          <a href="https://technostore.nexohuila.com">TechnoStore</a>
+          <p>
+            Catalogo E-Commerce de productos tecnológicos, con carrito de compras y pasarela de pago.
+            Con reportes, estadísticas y gestión de usuarios, productos y pedidos.
+            productos a buen precio y con garantía de calidad.
+            para administradores y clientes.
+          </p>
+        </article>
+      </div>
+      <div class="portafolio-grid">
+        <article class="tarjeta">
+          <h4>NEXOFOOD</h4>
+          <a>En desarrollo</a>
+          <p>
+            Plataforma de pedidos de comida en línea, con opciones de menú, carrito de compras y seguimiento de pedidos.
+            Con reportes, estadísticas y gestión de usuarios, productos y pedidos.
+            para administradores y clientes.
+            Modalidades como manejo de administradores, clientes y repartidores.
+            Funcionalidades de panel de administración, gestión de productos, pedidos y usuarios.
+            Actua como red social para restaurantes, con funcionalidades de panel de administración, gestión de productos, pedidos y usuarios.
+            Funcion de domiciliarios independientes con mapa de ubicación y seguimiento de pedidos.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="titulo-logros">
+      <h3 id="titulo-logros">Logros obtenidos</h3>
+      <ul class="tarjeta lista-logros">
+        <li>ODocumentacion necesaria para el desarrollo de 2 proyectos</li>
+        <li>Fundamentos en git y github</li>
+        <li>Organizamos el trabajo asignando tareas mediante GitHub Issues.</li>
+        <li>Desarrollo completo de mini-proyecto usando CRUD y metodologia scrum, con control de versiones usando git y github</li>
+        <li>Iniciamos la creación de una página para presentar al equipo.</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="titulo-perfil-limas">
+      <h3 id="titulo-perfil-limas">Perfil individual</h3>
+      <div class="perfil-limas">
+        <img class="foto-perfil" src="limasimg/Limas.jpeg" alt="Fotografía de Limas">
+        <div class="datos-perfil">
+          <h4>Deiner Smit Limas Lavao</h4>
+          <p>
+            Compañero lider del equipo, con habilidades en desarrollo web y gestión de proyectos.
+            habilidades en comunicación y trabajo en equipo, con experiencia en la creación de proyectos web y aplicaciones.
+            habilidades en desarrollo full-stack y conocimientos en bases de datos.
+          </p>
+          <p>
+            <strong>Aspectos destacados durante la formación:</strong>
+            Experiencia en el desarrollo de proyectos web y aplicaciones de forma autodidacta, con capacidad de aprendizaje y adaptación a nuevas tecnologías y herramientas.
+
+          </p>
+          <div class="lenguajes-perfil" aria-labelledby="titulo-lenguajes">
+            <h5 id="titulo-lenguajes">Lenguajes de programación</h5>
+            <ul class="lista-lenguajes">
+              <li class="lenguaje">
+                <svg class="icono-lenguaje icono-html" viewBox="0 0 32 32" role="img" aria-label="HTML5">
+                  <path fill="currentColor" d="M3 2h26l-2.37 26.6L16 32 5.37 28.6 3 2Z"/>
+                  <path fill="#fff" d="M10 8h13l-.25 3H13l.2 3h9.3l-.8 9.1-5.7 1.8-5.7-1.8-.35-4.1h3l.18 1.8 2.87.9 2.87-.9.3-3.8h-8.2L10 8Z"/>
+                </svg>
+                <span>HTML</span>
+              </li>
+              <li class="lenguaje">
+                <svg class="icono-lenguaje icono-css" viewBox="0 0 32 32" role="img" aria-label="CSS3">
+                  <path fill="currentColor" d="M3 2h26l-2.37 26.6L16 32 5.37 28.6 3 2Z"/>
+                  <text x="16" y="23" fill="#fff" font-size="18" font-weight="700" text-anchor="middle">3</text>
+                </svg>
+                <span>CSS</span>
+              </li>
+              <li class="lenguaje">
+                <svg class="icono-lenguaje icono-js" viewBox="0 0 32 32" role="img" aria-label="JavaScript">
+                  <rect x="2" y="2" width="28" height="28" rx="3" fill="currentColor"/>
+                  <path fill="#352c2d" d="M17 23.8c.65 1.05 1.45 1.82 2.9 1.82 1.22 0 1.95-.61 1.95-1.45 0-1.01-.75-1.37-2.08-1.95l-.73-.31c-2.1-.9-3.5-2.03-3.5-4.43 0-2.2 1.68-3.88 4.3-3.88 1.87 0 3.22.65 4.2 2.35l-2.3 1.48c-.5-.9-1.03-1.25-1.9-1.25-.87 0-1.42.55-1.42 1.25 0 .87.55 1.23 1.82 1.78l.73.31c2.48 1.06 3.88 2.15 3.88 4.62 0 2.65-2.08 4.1-4.87 4.1-2.74 0-4.5-1.3-5.36-3l2.38-1.44ZM7 24.05c.47.83.9 1.53 1.93 1.53.98 0 1.6-.38 1.6-1.85v-9.98h2.92v10.02c0 3.02-1.77 4.4-4.36 4.4-2.34 0-3.7-1.22-4.4-2.7L7 24.05Z"/>
+                </svg>
+                <span>JavaScript</span>
+              </li>
+              <li class="lenguaje">
+                <svg class="icono-lenguaje icono-php" viewBox="0 0 32 32" role="img" aria-label="PHP">
+                  <ellipse cx="16" cy="16" rx="15" ry="10" fill="currentColor"/>
+                  <path fill="#fff" d="M8 12h4.2c2.5 0 3.5 1.4 3.1 3.5-.4 2.2-2 3.5-4.5 3.5H9.4L10 22H7.4L8 12Zm2.6 2-.8 5h1.1c1.4 0 2.1-.7 2.3-2.3.3-1.8-.2-2.7-1.7-2.7h-.9Zm7-2h2.6l-.3 2h1.5c2.3 0 3.1 1.1 2.8 3.2l-.6 3.8H21l.6-3.7c.2-1.1-.1-1.5-1.1-1.5h-.9l-.8 5.2h-2.6l1.4-9Z"/>
+                </svg>
+                <span>PHP</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
   <!-- SECCIÓN INTEGRANTE 4 -->
           <!-- SECCIÓN INTEGRANTE 5 -->
           <article class="tarjeta-integrante" id="integrante-1">
