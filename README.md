@@ -28,7 +28,8 @@ Combinamos habilidades en levantamiento de requisitos, diseño UX/UI, desarrollo
 
 ## 🍽️ Proyecto Formativo Principal: **NexoFood**
 
-**NexoFood** es una **Plataforma Web y Móvil para la Gestión, Centralización e Intermediación Tecnológica del Sector Gastronómico y Restaurantero**.
+**NexoFood** es una **Plataforma Web y Móvil para la Gestión, Centralización e Intermediación Tecnológica del Sector Gastronómico y de restaurantes**.
+
 
 ### 🎯 Propósito
 Digitalizar y centralizar la operación de pequeños y medianos restaurantes, reduciendo la dependencia de comisiones elevadas en plataformas agregadoras, eliminando errores de comandas en papel y garantizando la continuidad operativa incluso ante fallas de conectividad a Internet.
@@ -98,4 +99,4 @@ A lo largo de nuestra etapa de formación en el SENA hemos consolidado diversos 
 > Puedes encontrar nuestros avances, documentación y repositorios en nuestra organización de GitHub y espacios colaborativos del SENA.
 
 ---
-*Documento elaborado para la presentación oficial del Equipo 6 · ADSO Ficha 3407799 · SENA.*
+*Documento elaborado para la presentación oficial del Equipo 6 · ADSO Ficha 3407799 · Neiva - SENA.*
