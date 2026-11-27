@@ -28,7 +28,7 @@ Combinamos habilidades en levantamiento de requisitos, diseño UX/UI, desarrollo
 
 ## 🍽️ Proyecto Formativo Principal: **NexoFood**
 
-**NexoFood** es una **Plataforma Web y Móvil para la Gestión, Centralización e Intermediación Tecnológica del Sector Gastronómico y de restaurante**.
+**NexoFood** es una **Plataforma Web y Móvil para la Gestión, Centralización e Intermediación Tecnológica del Sector Gastronómico y de restaurantes**.
 
 ### 🎯 Propósito
 Digitalizar y centralizar la operación de pequeños y medianos restaurantes, reduciendo la dependencia de comisiones elevadas en plataformas agregadoras, eliminando errores de comandas en papel y garantizando la continuidad operativa incluso ante fallas de conectividad a Internet.
