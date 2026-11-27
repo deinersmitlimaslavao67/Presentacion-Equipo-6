@@ -98,4 +98,4 @@ A lo largo de nuestra etapa de formación en el SENA hemos consolidado diversos 
 > Puedes encontrar nuestros avances, documentación y repositorios en nuestra organización de GitHub y espacios colaborativos del SENA.
 
 ---
-*Documento elaborado para la presentación oficial del Equipo 6 · ADSO Ficha 3407799 · SENA.*
+*Documento elaborado para la presentación oficial del Equipo 6 · ADSO Ficha 3407799 · Neiva - SENA.*
