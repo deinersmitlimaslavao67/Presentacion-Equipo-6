@@ -55,54 +55,13 @@ Para garantizar que el código de todos los desarrolladores luzca uniforme y evi
 * **Bloques obligatorios:** Siempre usar llaves `{ }` incluso en condicionales `if` o bucles de una sola línea.
 
 **Ejemplo correcto:**
-```javascript
+
 if (isActive && userRole === 'admin') {
   grantAccess(userId);
 } else {
   denyAccess();
 }
 
-## 3. Comentarios y documentación (pendiente)
-## 4. Estructura de carpetas (pendiente) 
-## 5. Git: ramas, commits y pull requests 
-
-Para mantener un historial de cambios limpio, ordenado y evitar conflictos al trabajar en equipo, todos los integrantes deben seguir estrictamente estas reglas de control de versiones:
-
-### 5.1. Convención para Nombres de Ramas
-* **Rama principal (`main`):** Contiene únicamente código estable y probado. **Está estrictamente prohibido hacer `push` directo a `main`.**
-* **Ramas de trabajo:** Deben crearse a partir de `main` usando `kebab-case` (todo en minúsculas y separado por guiones, sin tildes ni caracteres especiales) y comenzando con un prefijo según el tipo de tarea:
-  * `feature/<nombre-tarea>`: Para nuevas funcionalidades o módulos (ej. `feature/login-usuario`, `feature/carrito-compras`).
-  * `fix/<nombre-error>`: Para corrección de errores o fallos (ej. `fix/ortografia-readme`, `fix/validacion-formulario`).
-  * `docs/<nombre-doc>`: Para cambios exclusivos en documentación (ej. `docs/guia-instalacion`).
-  * `refactor/<nombre-mejora>`: Para reestructurar o limpiar código sin cambiar su comportamiento (ej. `refactor/conexion-bd`).
-
-### 5.2. Formato de los Mensajes de Commit
-Se utilizará el estándar **Conventional Commits** en español, redactado en tiempo presente e imperativo, con un máximo de 72 caracteres en la primera línea:
-
-`<tipo>: <descripción breve del cambio>`
-
-* **Tipos permitidos:**
-  * `feat:` Nueva funcionalidad añadida al proyecto.
-  * `fix:` Corrección de un error (*bug*).
-  * `docs:` Cambios en archivos de documentación (`README.md`, comentarios).
-  * `style:` Cambios de formato (espacios, comillas, indentación) que no afectan la lógica.
-  * `refactor:` Mejora o reorganización interna del código.
-  * `chore:` Tareas de configuración, dependencias o mantenimiento.
-
-**Ejemplos correctos:**
-* `feat: agrega endpoint para registrar usuarios`
-* `fix: corrige error de ortografía en el README`
-* `docs: actualiza sección de reglas de nombrado`
-
-### 5.3. Reglas y Requisitos para Aprobar Pull Requests (PR)
-Ningún cambio pasará a `main` sin antes pasar por un **Pull Request** en GitHub y cumplir con estos requisitos:
-
-1. **Rama actualizada:** Antes de abrir el PR, el autor debe sincronizar su rama con los últimos cambios de `main` (`git pull origin main`) y resolver cualquier conflicto localmente.
-2. **Descripción clara:** El PR debe tener un título descriptivo, explicar qué se hizo y referenciar el número del *Issue* correspondiente (ej. `Closes #28`).
-3. **Código limpio y funcional:** El código debe respetar las reglas de nombrado y formato del proyecto, compilar/ejecutar sin errores y no incluir archivos temporales o credenciales (`.env`, `node_modules`).
-4. **Revisión obligatoria:** Al menos **1 compañero del equipo** (distinto al autor) debe revisar el código y aprobar el PR antes de realizar el *Merge* hacia `main`.
-## 1. Nombrado (pendiente) 
-## 2. Formato (pendiente) 
 ## 3. Comentarios y documentación
 
 ### ¿Cuándo y cómo comentar el código?
@@ -132,7 +91,6 @@ Las funciones clave, utilidades y endpoints de la API de **Tienda SENA** se docu
 
 **Ejemplo aplicado al proyecto:**
 
-```javascript
 /**
  * Calcula el total a pagar del carrito aplicando un descuento si supera el monto mínimo.
  *
@@ -203,4 +161,44 @@ frontend/src/pages/: agrupa las vistas principales de la tienda (inicio, catálo
 
 frontend/src/services/: centraliza las funciones que se conectan con el backend mediante fetch o axios para consultar los productos y enviar pedidos.
 
-## 5. Git: ramas, commits y pull requests (pendiente)
+
+
+
+
+## 5. Git: ramas, commits y pull requests 
+
+Para mantener un historial de cambios limpio, ordenado y evitar conflictos al trabajar en equipo, todos los integrantes deben seguir estrictamente estas reglas de control de versiones:
+
+### 5.1. Convención para Nombres de Ramas
+* **Rama principal (`main`):** Contiene únicamente código estable y probado. **Está estrictamente prohibido hacer `push` directo a `main`.**
+* **Ramas de trabajo:** Deben crearse a partir de `main` usando `kebab-case` (todo en minúsculas y separado por guiones, sin tildes ni caracteres especiales) y comenzando con un prefijo según el tipo de tarea:
+  * `feature/<nombre-tarea>`: Para nuevas funcionalidades o módulos (ej. `feature/login-usuario`, `feature/carrito-compras`).
+  * `fix/<nombre-error>`: Para corrección de errores o fallos (ej. `fix/ortografia-readme`, `fix/validacion-formulario`).
+  * `docs/<nombre-doc>`: Para cambios exclusivos en documentación (ej. `docs/guia-instalacion`).
+  * `refactor/<nombre-mejora>`: Para reestructurar o limpiar código sin cambiar su comportamiento (ej. `refactor/conexion-bd`).
+
+### 5.2. Formato de los Mensajes de Commit
+Se utilizará el estándar **Conventional Commits** en español, redactado en tiempo presente e imperativo, con un máximo de 72 caracteres en la primera línea:
+
+`<tipo>: <descripción breve del cambio>`
+
+* **Tipos permitidos:**
+  * `feat:` Nueva funcionalidad añadida al proyecto.
+  * `fix:` Corrección de un error (*bug*).
+  * `docs:` Cambios en archivos de documentación (`README.md`, comentarios).
+  * `style:` Cambios de formato (espacios, comillas, indentación) que no afectan la lógica.
+  * `refactor:` Mejora o reorganización interna del código.
+  * `chore:` Tareas de configuración, dependencias o mantenimiento.
+
+**Ejemplos correctos:**
+* `feat: agrega endpoint para registrar usuarios`
+* `fix: corrige error de ortografía en el README`
+* `docs: actualiza sección de reglas de nombrado`
+
+### 5.3. Reglas y Requisitos para Aprobar Pull Requests (PR)
+Ningún cambio pasará a `main` sin antes pasar por un **Pull Request** en GitHub y cumplir con estos requisitos:
+
+1. **Rama actualizada:** Antes de abrir el PR, el autor debe sincronizar su rama con los últimos cambios de `main` (`git pull origin main`) y resolver cualquier conflicto localmente.
+2. **Descripción clara:** El PR debe tener un título descriptivo, explicar qué se hizo y referenciar el número del *Issue* correspondiente (ej. `Closes #28`).
+3. **Código limpio y funcional:** El código debe respetar las reglas de nombrado y formato del proyecto, compilar/ejecutar sin errores y no incluir archivos temporales o credenciales (`.env`, `node_modules`).
+4. **Revisión obligatoria:** Al menos **1 compañero del equipo** (distinto al autor) debe revisar el código y aprobar el PR antes de realizar el *Merge* hacia `main`.
